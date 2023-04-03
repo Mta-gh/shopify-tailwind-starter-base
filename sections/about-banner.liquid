@@ -1,0 +1,19 @@
+{% for banner in shop.metaobjects.about_banner.values  %}
+    <div class="bg-center bg-center" style="background-image: url({{ banner.about_banner_image | img_url }});">
+        <p>{{ banner.about_banner_text}}</p>
+        <img src=" {{ banner.about_banner_image | img_url:'500x' }}" alt="">
+    </div>
+{% endfor %}
+
+{%  schema  %} 
+    {
+        "name": "about-banner",
+        "settings": [],
+        "presets": [
+        {
+        "name": "About Banner",
+        "category": "text"
+        }
+        ]
+    }
+{% endschema %}

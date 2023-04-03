@@ -512,3 +512,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .twcss-block {
   display: block;
 }
+
+.twcss-text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.twcss-font-black {
+  font-weight: 900;
+}
