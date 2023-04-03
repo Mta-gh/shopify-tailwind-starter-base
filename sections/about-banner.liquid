@@ -1,5 +1,5 @@
 {% for banner in shop.metaobjects.about_banner.values  %}
-    <div class="bg-center bg-center" style="background-image: url({{ banner.about_banner_image | img_url }});">
+    <div class="twcss-bg-cover twcss-bg-center twcss-bg-no-repeat" style="background-image: url({{ banner.about_banner_image | img_url }});">
         <p>{{ banner.about_banner_text}}</p>
         <img src=" {{ banner.about_banner_image | img_url:'500x' }}" alt="">
     </div>
