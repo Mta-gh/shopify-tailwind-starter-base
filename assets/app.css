@@ -506,6 +506,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }
 
+.twcss-h-\[45rem\] {
+  height: 45rem;
+}
+
+.twcss-max-w-\[1500px\] {
+  max-width: 1500px;
+}
+
+.twcss-bg-cover {
+  background-size: cover;
+}
+
+.twcss-bg-center {
+  background-position: center;
+}
+
+.twcss-bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
 .twcss-text-6xl {
   font-size: 3.75rem;
   line-height: 1;
