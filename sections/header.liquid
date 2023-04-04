@@ -408,6 +408,7 @@
                 alt: logo_alt
               }}
             {%- else -%}
+              <img src="{{ settings.logo | img_url }}" alt="{{ shop.name }} logo">
               <span class="h2">{{ shop.name }}</span>
             {%- endif -%}
           </a>

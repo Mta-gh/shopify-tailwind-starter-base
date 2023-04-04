@@ -249,10 +249,12 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
+    <div class="twcss-max-w-[1500px] page-width">
+      <main id="MainContent" class="content-for-layout focus-none twcss-bg-red-500" role="main" tabindex="-1">
+        {{ content_for_layout }}
+      </main>
+    </div>
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
 
     {% sections 'footer-group' %}
 
