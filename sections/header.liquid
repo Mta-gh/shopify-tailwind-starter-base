@@ -532,13 +532,53 @@
     {{ shop.brand.logo | image_url: width: 73 | image_tag: width: 60, alt: shop.name }}
   </a>
     {% comment %} Custom Nav {% endcomment %}
-    <nav class="twcss-flex twcss-flex-col twcss-absolute twcss-top-0 twcss-right-[-27vw] twcss-bg-secGreen twcss-w-[65vh] twcss-h-[100vh]">
-      {% for link in linklists.main-menu.links %}
-          <a href="{{ link.url }}" class="twcss-text-[7.5rem] twcss-text-white"{% if link.current %} aria-current="page"{% endif %}>
-            <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+    <div class="twcss-absolute twcss-flex twcss-justify-center twcss-flex-col twcss-top-0 twcss-right-[-27vw] twcss-bg-secGreen twcss-w-[65vh] twcss-h-[100vh] twcss-pl-64 twcss-text-white ">
+      <div class="twcss-absolute twcss-top-[7rem] twcss-right-[8rem] twcss-flex twcss-justify-center twcss-items-center">
+        <span class="twcss-absolute nav__cross__line"></span>
+        <span class="twcss-absolute nav__cross__line"></span>
+      </div>
+      <nav class="twcss-flex twcss-justify-center twcss-flex-col">
+        {% for link in linklists.main-menu.links %}
+            <a href="{{ link.url }}" class="twcss-text-[7.5rem] twcss-uppercase"{% if link.current %} aria-current="page"{% endif %}>
+              <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+            </a>
+          {% endfor %}
+          {% comment %} Footer Socials {% endcomment %}
+        
+      </nav>
+      <div class="twcss-pt-40">
+        <span class="twcss-pb-4 twcss-block">
+          Follow us
+        </span>
+        <div class="twcss-flex twcss-items-center">
+          <a href="#">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 19V37L19 39H37L39 37V19L37 17H19L17 19Z" stroke="white"/>
+              <path d="M24 25.5V31L25 32H31L32 31V25.5L31 24H25L24 25.5Z" stroke="white"/>
+              <path d="M35 21H33V23H35V21Z" fill="white"/>
+              <rect x="0.5" y="0.5" width="55" height="55" stroke="white"/>
+            </svg>
           </a>
-        {% endfor %}
-    </nav>
+          <a href="#" class="twcss-pl-5">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 19V37L19 39H37L39 37V19L37 17H19L17 19Z" stroke="white"/>
+              <path d="M24 25.5V31L25 32H31L32 31V25.5L31 24H25L24 25.5Z" stroke="white"/>
+              <path d="M35 21H33V23H35V21Z" fill="white"/>
+              <rect x="0.5" y="0.5" width="55" height="55" stroke="white"/>
+            </svg>
+          </a>
+          <a href="#" class="twcss-pl-5">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 19V37L19 39H37L39 37V19L37 17H19L17 19Z" stroke="white"/>
+              <path d="M24 25.5V31L25 32H31L32 31V25.5L31 24H25L24 25.5Z" stroke="white"/>
+              <path d="M35 21H33V23H35V21Z" fill="white"/>
+              <rect x="0.5" y="0.5" width="55" height="55" stroke="white"/>
+            </svg>
+          </a>
+        </div>
+      </div>  
+    </div>
+    
     {% comment %} Header icons {% endcomment %}
     <div class="twcss-flex twcss-items-center twcss-justify-between twcss-gap-6">
       {% comment %} Cart {% endcomment %}

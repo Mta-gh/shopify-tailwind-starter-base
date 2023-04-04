@@ -13,10 +13,18 @@
   cursor: pointer;
 }
 
-.nav__burger_line {
+.nav__burger_line,
+.nav__cross__line {
   width: 3.5rem;
   height: 2px;
   background-color: white;
+}
+
+.nav__cross__line:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+.nav__cross__line:nth-of-type(2) {
+  transform: rotate(-45deg);
 }
 
 @media screen and (max-width: 768px) {
