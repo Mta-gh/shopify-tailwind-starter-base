@@ -36,6 +36,7 @@
   }
 {%- endstyle -%}
 
+{% comment %} footer start
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
     assign has_social_icons = true
@@ -136,72 +137,11 @@
             {%- endfor -%}
           </div>
         {%- endif -%}
-
-        <div class="footer-block--newsletter">
-          {%- if section.settings.newsletter_enable -%}
-            <div class="footer-block__newsletter">
-              {%- if section.settings.newsletter_heading != blank -%}
-                <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
-              {%- endif -%}
-              {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <div class="newsletter-form__field-wrapper">
-                  <div class="field">
-                    <input
-                      id="NewsletterForm--{{ section.id }}"
-                      type="email"
-                      name="contact[email]"
-                      class="field__input"
-                      value="{{ form.email }}"
-                      aria-required="true"
-                      autocorrect="off"
-                      autocapitalize="off"
-                      autocomplete="email"
-                      {% if form.errors %}
-                        autofocus
-                        aria-invalid="true"
-                        aria-describedby="ContactFooter-error"
-                      {% elsif form.posted_successfully? %}
-                        aria-describedby="ContactFooter-success"
-                      {% endif %}
-                      placeholder="{{ 'newsletter.label' | t }}"
-                      required
-                    >
-                    <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                      {{ 'newsletter.label' | t }}
-                    </label>
-                    <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
-                      {% render 'icon-arrow' %}
-                    </button>
-                  </div>
-                  {%- if form.errors -%}
-                    <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
-                  {%- endif -%}
-                </div>
-                {%- if form.posted_successfully? -%}
-                  <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
-                {%- endif -%}
-              {%- endform -%}
-            </div>
-          {%- endif -%}
-
-          {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-            <div class="footer__follow-on-shop">
-            {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
-            {% # theme-check-disable %}
-              {{ shop | login_button: action: 'follow' }}
-            {% # theme-check-enable %}
-            </div>
-          {%- endif -%}
-
-          {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons' -%}
-          {%- endif -%}
-        </div>
       </div>
     {%- endunless -%}
   {%- endif -%}
 
+  {% comment %} Footer bottom line {% endcomment %}
   <div class="footer__content-bottom">
     <div class="footer__content-bottom-wrapper page-width">
       <div class="footer__column footer__localization isolate">
@@ -294,20 +234,6 @@
           </localization-form>
         {%- endif -%}
       </div>
-      <div class="footer__column footer__column--info">
-        {%- if section.settings.payment_enable -%}
-          <div class="footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-            <ul class="list list-payment" role="list">
-              {%- for type in shop.enabled_payment_types -%}
-                <li class="list-payment__item">
-                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
-        {%- endif -%}
-      </div>
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
@@ -326,6 +252,101 @@
     </div>
   </div>
 </footer>
+{% comment %} Footer end {% endcomment %} {% endcomment %}
+
+
+{% comment %} Custom Footer start {% endcomment %}
+<footer class="twcss-bg-primRed twcss-flex twcss-items-center twcss-justify-center twcss-text-white twcss-py-5">
+  <div class="page-width twcss-flex twcss-items-center twcss-justify-between twcss-flex-col twcss-max-w-[1500px] twcss-w-full twcss-relative">
+
+    {% comment %} LOGO {% endcomment %}
+    <div>
+      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset twcss-absolute footer__logo">
+        {% comment %} {{ shop.brand.logo | image_url: width: 73 | image_tag: width: 60, alt: shop.name }} {% endcomment %}
+        <svg width="57" height="73" viewBox="0 0 57 73" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect width="57" height="73" fill="url(#pattern0)"/>
+          <defs>
+          <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#image0_130_142" transform="matrix(0.0112342 0 0 0.00877193 -0.0167744 0)"/>
+          </pattern>
+          <image id="image0_130_142" width="92" height="114" xlink:href="data:image/png;base64,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"/>
+          </defs>
+          </svg>
+          
+      </a>
+    </div>
+
+    {% comment %} Upper footer {% endcomment %}
+    <div class="twcss-w-full twcss-flex twcss-items-center twcss-justify-between twcss-py-14 twcss-border-b twcss-border-white ">
+      <ul class="twcss-hidden twcss-items-center twcss-uppercase twcss-text-3xl md:twcss-flex">
+        {% for link in linklists.footer.links %}
+          <li class="twcss-pr-16"><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %} 
+      </ul>
+      {% comment %} Footer Socials {% endcomment %}
+      <div class="hello__test">
+        <span class="twcss-pb-4 twcss-block">
+          Follow us
+        </span>
+        <div class="twcss-flex twcss-items-center">
+          <a href="#">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 19V37L19 39H37L39 37V19L37 17H19L17 19Z" stroke="white"/>
+              <path d="M24 25.5V31L25 32H31L32 31V25.5L31 24H25L24 25.5Z" stroke="white"/>
+              <path d="M35 21H33V23H35V21Z" fill="white"/>
+              <rect x="0.5" y="0.5" width="55" height="55" stroke="white"/>
+            </svg>
+          </a>
+          <a href="#" class="twcss-pl-5">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 19V37L19 39H37L39 37V19L37 17H19L17 19Z" stroke="white"/>
+              <path d="M24 25.5V31L25 32H31L32 31V25.5L31 24H25L24 25.5Z" stroke="white"/>
+              <path d="M35 21H33V23H35V21Z" fill="white"/>
+              <rect x="0.5" y="0.5" width="55" height="55" stroke="white"/>
+            </svg>
+          </a>
+          <a href="#" class="twcss-pl-5">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 19V37L19 39H37L39 37V19L37 17H19L17 19Z" stroke="white"/>
+              <path d="M24 25.5V31L25 32H31L32 31V25.5L31 24H25L24 25.5Z" stroke="white"/>
+              <path d="M35 21H33V23H35V21Z" fill="white"/>
+              <rect x="0.5" y="0.5" width="55" height="55" stroke="white"/>
+            </svg>
+          </a>
+        </div>
+      </div>  
+      
+    </div>
+    
+    {% comment %} Lower footer {% endcomment %}
+    <div class="twcss-flex twcss-items-center twcss-justify-between twcss-w-full twcss-opacity-70 twcss-pt-5">
+        {% comment %} Copyright Section {% endcomment %}
+      <div class="footer__content-bottom-wrapper {% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
+        <div class="footer__copyright caption twcss-mr-auto">
+          <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
+          <small class="copyright__content">{{ powered_by_link }}</small>
+          {%- if section.settings.show_policy -%}
+            <ul class="policies list-unstyled">
+              {%- for policy in shop.policies -%}
+                {%- if policy != blank -%}
+                  <li><small class="copyright__content"><a href="{{ policy.url }}">{{ policy.title }}</a></small></li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      </div>
+      {% comment %} Cookie and privacy section {% endcomment %}
+      <div class="twcss-hidden twcss-items-center twcss-gap-6 md:twcss-flex">
+        <a href="#"><small class="twcss-whitespace-nowrap twcss-border-r twcss-border-white twcss-pr-6">Terms & conditions</small></a>
+        <a href="#"><small class="twcss-whitespace-nowrap twcss-border-r twcss-border-white twcss-pr-6">Privacy Policy</small></a>
+        <a href="#"><small class="twcss-whitespace-nowrap">Cookies</small></a>
+      </div>
+    </div>
+  </div>
+</footer>
+{% comment %} Custom Footer End {% endcomment %}
+
 
 {% javascript %}
   class LocalizationForm extends HTMLElement {

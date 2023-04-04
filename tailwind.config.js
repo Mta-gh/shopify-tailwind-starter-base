@@ -21,8 +21,12 @@ module.exports = {
         heading: 'var(--font-heading-family)',
       },
     },
-    color: {
+    colors: {
+      white: '#ffffff',
       black: '#000000',
+      primRed: '#ff023e',
+      secGreen: '#119849',
+      secBlue: '#70e0e1',
     },
   },
   plugins: [],

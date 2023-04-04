@@ -1,0 +1,26 @@
+.footer__logo {
+  top: -10rem;
+  left: 5rem;
+  background: #ff023e;
+  border-radius: 50% 50% 0 0;
+}
+
+.nav__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav__burger_line {
+  width: 3.5rem;
+  height: 2px;
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__logo {
+    left: 1.2rem;
+  }
+}
