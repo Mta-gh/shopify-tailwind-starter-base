@@ -513,6 +513,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }
 
+.twcss-h-\[45rem\] {
+  height: 45rem;
+}
+
+.twcss-max-w-\[1500px\] {
+  max-width: 1500px;
+}
+
 .twcss-bg-cover {
   background-size: cover;
 }
