@@ -8,55 +8,162 @@
 </div>
 {% schema %}
 {
-    "name": "Hero Image",
-    "tag": "section",
-    "class": "home-hero-image",
-    "max_blocks": 1,
-    "blocks": [{
-        "type": "image",
-        "name": "Image",
-        "settings": [{
+   "name": "Hero Image",
+   "tag": "section",
+   "class": "home-hero-image",
+   "max_blocks": 1,
+   "blocks": [{
+      "type": "image",
+      "name": "Image",
+      "settings": [{
             "type": "header",
             "content": "Hero Image"
-        },
-        {
+         },
+         {
             "type": "image_picker",
             "id": "image",
             "label": "Image"
-        },
-        { 
-            "type": "range", 
-            "id": "image_height", 
-            "min": 20, 
-            "max": 100, 
-            "step": 1, 
-            "unit": "vh", 
-            "label": "Image Height", 
-            "default": 50 }, 
-            { 
-                "type": "select", 
-                "id": "image_background_position", 
-                "label": "Image Background Position", 
-                "options": [{ 
-                    "value": "top", "label": "Top" }, 
-                    { 
-                        "value": "center", 
-                        "label": "Center" }, 
-                        { 
-                            "value": "bottom", 
-                            "label": "Bottom" } 
-                        ], 
-                        "default": "center" }
-                    ]
-                }],
-                "presets": [{
-                    "name": "Hero Image",
-                    "category": "Image",
-                    "blocks": [{
-                        "type": "image"
-                    }]
-                }]
-            }
-            {% endschema %}
+         },
+         {
+            "type": "range",
+            "id": "image_height",
+            "min": 20,
+            "max": 100,
+            "step": 1,
+            "unit": "vh",
+            "label": "Image Height",
+            "default": 50
+         },
+         {
+            "type": "select",
+            "id": "image_background_position",
+            "label": "Image Background Position",
+            "options": [{
+                  "value": "top",
+                  "label": "Top"
+               },
+               {
+                  "value": "center",
+                  "label": "Center"
+               },
+               {
+                  "value": "bottom",
+                  "label": "Bottom"
+               }
+            ],
+            "default": "center"
+         },
+         {
+            "type": "range",
+            "id": "image_gradient_darkness",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "%",
+            "label": "Image Gradient Darkness",
+            "default": 30
+         },
+         {
+            "type": "header",
+            "content": "Header Text Settings"
+         },
+         {
+            "type": "text",
+            "id": "hero_heading",
+            "label": "Heading Text"
+         },
+         {
+            "type": "radio",
+            "id": "heading_font_size",
+            "label": "Heading Font Size",
+            "options": [{
+                  "value": "text-2xl",
+                  "label": "Small"
+               },
+               {
+                  "value": "text-3xl md:text-3xl",
+                  "label": "Medium"
+               },
+               {
+                  "value": "text-3xl md:text-4xl",
+                  "label": "Large"
+               },
+               {
+                  "value": "text-3xl md:text-5xl",
+                  "label": "XL"
+               },
+               {
+                  "value": "text-3xl md:text-5xl lg:text-7xl",
+                  "label": "2XL"
+               }
+            ],
+            "default": "text-3xl md:text-5xl"
+         },
+         {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading Text Color",
+            "default": "#ffffff"
+         },
+         {
+            "type": "header",
+            "content": "Sub-header Text Settings"
+         },
+         {
+            "type": "textarea",
+            "id": "sub_heading",
+            "label": "Sub Text"
+         },
+         {
+            "type": "color",
+            "id": "sub_heading_color",
+            "label": "Sub Heading Text Color",
+            "default": "#ffffff"
+         },
+         {
+            "type": "header",
+            "content": "Button Settings"
+         },
+         {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+         },
+         {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "Learn more"
+         },
+         {
+            "type": "radio",
+            "id": "button_background_color",
+            "label": "Button Background Color",
+            "options": [{
+                  "value": "bg-white hover:bg-gray-200 text-black",
+                  "label": "White"
+               },
+               {
+                  "value": "bg-black hover:bg-gray-800 text-white",
+                  "label": "Black"
+               }
+            ],
+            "default": "bg-white hover:bg-gray-200 text-black"
+         }
+      ]
+   }],
+   "presets": [{
+      "name": "Hero Image",
+      "category": "Image",
+      "blocks": [{
+         "type": "image",
+         "settings": {
+            "hero_heading": "REPLACE THIS TEXT",
+            "sub_heading": "A sub heading"
+         }
+      }]
+   }]
+}
+{% endschema %}
             
             
