@@ -533,6 +533,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 8rem;
 }
 
+.twcss-z-0 {
+  z-index: 0;
+}
+
 .twcss-mr-auto {
   margin-right: auto;
 }
@@ -623,6 +627,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-gap-6 {
   gap: 1.5rem;
+}
+
+.twcss-overflow-hidden {
+  overflow: hidden;
 }
 
 .twcss-whitespace-nowrap {
