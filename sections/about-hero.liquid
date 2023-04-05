@@ -11,31 +11,31 @@
     {% endfor %}
 </div>
 {% schema %}
-    {
-        "name": "Hero Image",
-        "tag": "section",
-        "class": "home-hero-image",
-        "blocks": [{
-            "type": "image",
-            "name": "Image",
-            "settings": [{
-                  "type": "header",
-                  "content": "Hero Image"
-               },
-               {
-                  "type": "image_picker",
-                  "id": "image",
-                  "label": "Image"
-               }
-            ]
-         }],
-         "presets": [{
-            "name": "Hero Image",
-            "category": "Image",
-            "blocks": [{
-               "type": "image"
-            }]
-         }]
-        
-    }
+{
+   "name": "Hero Image",
+   "tag": "section",
+   "class": "home-hero-image",
+   "max_blocks": 1,
+   "blocks": [{
+      "type": "image",
+      "name": "Image",
+      "settings": [{
+            "type": "header",
+            "content": "Hero Image"
+         },
+         {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+         }
+      ]
+   }],
+   "presets": [{
+      "name": "Hero Image",
+      "category": "Image",
+      "blocks": [{
+         "type": "image"
+      }]
+   }]
+}
 {% endschema %}
