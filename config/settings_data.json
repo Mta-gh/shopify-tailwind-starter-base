@@ -142,7 +142,9 @@
           "7d78010e-ffe3-4f22-9b7e-5e90be1a3a66": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/background_image_of_next_drop.png"
+              "image": "shopify:\/\/shop_images\/background_image_of_next_drop.png",
+              "image_height": 39,
+              "image_background_position": "center"
             }
           }
         },
