@@ -569,6 +569,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 5rem;
 }
 
+.twcss-h-\[44rem\] {
+  height: 44rem;
+}
+
 .twcss-w-full {
   width: 100%;
 }
@@ -583,6 +587,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-max-w-\[1500px\] {
   max-width: 1500px;
+}
+
+.twcss-max-w-\[70\%\] {
+  max-width: 70%;
+}
+
+.twcss-max-w-\[60\%\] {
+  max-width: 60%;
+}
+
+.twcss-max-w-\[80rem\] {
+  max-width: 80rem;
+}
+
+.twcss-max-w-full {
+  max-width: 100%;
 }
 
 .twcss-flex-col {
