@@ -1,7 +1,7 @@
 <div class="twcss-h-[44rem] twcss-max-w-full">
 {% for block in section.blocks %}
     {% if block.settings.image != blank %}
-    <div id="hero-header" class="relative z-0" style="height: {{block.settings.image_height}}vh; background-size: cover; {{block.settings.image_background_position}} ;background-image: url('{{ block.settings.image | img_url: '1800x', crop: "center" }}');">
+    <div id="hero-header" class="relative z-0" style="height: {{block.settings.image_height}}vh; background-size: cover; background-position: {{block.settings.image_background_position}} ;background-image: url('{{ block.settings.image | img_url: '1800x', crop: "center" }}');">
     </div>
     {% endif %}
 {% endfor %}
@@ -24,7 +24,12 @@
             "id": "image",
             "label": "Image"
          },
-         { "type": "range", "id": "image_height", "min": 20, "max": 100, "step": 1, "unit": "vh", "label": "Image Height", "default": 50 }, { "type": "select", "id": "image_background_position", "label": "Image Background Position", "options": [{ "value": "top", "label": "Top" }, { "value": "center", "label": "Center" }, { "value": "bottom", "label": "Bottom" } ], "default": "center" }
+         { "type": "range", "id": "image_height", "min": 20, "max": 100, "step": 1, "unit": "vh", "label": "Image Height", "default": 50 }, 
+         { "type": "select", "id": "image_background_position", "label": "Image Background Position", "options": [{ "value": "top", "label": "Top" }, 
+            { "value": "center", "label": "Center" }, 
+            { "value": "bottom", "label": "Bottom" } 
+        ], 
+        "default": "center" }
       ]
    }],
    "presets": [{
