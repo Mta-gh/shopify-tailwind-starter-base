@@ -5,6 +5,15 @@
   border-radius: 50% 50% 0 0;
 }
 
+.nav__menu {
+  right: -100vw;
+  transition: right 0.3s ease-in-out;
+}
+
+.active {
+  right: -27vw;
+}
+
 .nav__burger {
   display: flex;
   flex-direction: column;
@@ -18,6 +27,12 @@
   width: 3.5rem;
   height: 2px;
   background-color: white;
+}
+
+.nav__cross {
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
 }
 
 .nav__cross__line:nth-of-type(1) {

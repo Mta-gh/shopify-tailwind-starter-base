@@ -6,8 +6,14 @@
 
 {% schema %}
   {
-    "name": "about-banner",
-    "settings": [],
+    "name": "t:sections.about-banner.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.about-banner.settings.image.label"
+      }
+    ],
     "presets": [
       {
         "name": "About Banner",

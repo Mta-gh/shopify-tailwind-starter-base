@@ -525,38 +525,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: -27vw;
 }
 
-.twcss-left-0 {
-  left: 0px;
-}
-
-.twcss-top-3 {
-  top: 0.75rem;
-}
-
-.twcss-left-3 {
-  left: 0.75rem;
-}
-
-.twcss-left-6 {
-  left: 1.5rem;
-}
-
-.twcss-left-9 {
-  left: 2.25rem;
-}
-
-.twcss-top-10 {
-  top: 2.5rem;
-}
-
-.twcss-top-\[50rem\] {
-  top: 50rem;
-}
-
-.twcss-right-\[70rem\] {
-  right: 70rem;
-}
-
 .twcss-top-\[7rem\] {
   top: 7rem;
 }
