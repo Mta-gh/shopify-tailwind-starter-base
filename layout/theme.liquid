@@ -198,6 +198,7 @@
       }
 
       body {
+        position: relative;
         display: grid;
         grid-template-rows: auto auto 1fr auto;
         grid-template-columns: 100%;
@@ -250,7 +251,7 @@
 
     {% sections 'header-group' %}
     <div class="twcss-max-w-[1500px] page-width">
-      <main id="MainContent" class="content-for-layout focus-none twcss-bg-red-500" role="main" tabindex="-1">
+      <main id="MainContent" class="content-for-layout focus-none twcss-bg-primRed" role="main" tabindex="-1">
         {{ content_for_layout }}
       </main>
     </div>
@@ -296,5 +297,7 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
+    
   </body>
 </html>

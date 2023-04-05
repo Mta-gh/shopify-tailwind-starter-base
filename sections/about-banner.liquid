@@ -1,13 +1,19 @@
 {% for banner in shop.metaobjects.about_banner.values %}
-  <div class="twcss-bg-cover twcss-bg-center twcss-bg-no-repeat twcss-h-[45rem] twcss-bg-red-50" style="background-image: url({{ banner.about_banner_image | img_url:'1500x' }});">
+  <div class="twcss-bg-cover twcss-bg-center twcss-bg-no-repeat twcss-h-[45rem] twcss-bg-primRed" style="background-image: url({{ banner.about_banner_image | img_url:'1500x' }});">
     <p>{{ banner.about_banner_text }}</p>
   </div>
 {% endfor %}
 
 {% schema %}
   {
-    "name": "about-banner",
-    "settings": [],
+    "name": "t:sections.about-banner.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.about-banner.settings.image.label"
+      }
+    ],
     "presets": [
       {
         "name": "About Banner",

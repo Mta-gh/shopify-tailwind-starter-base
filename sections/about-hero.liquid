@@ -1,6 +1,19 @@
+<div class="twcss-h-[44rem] twcss-max-w-full">
+    {% comment %} Title Container {% endcomment %}
+    <div class="twcss-max-w-[60%]">
+        <h1 class="twcss-text-6xl twcss-font-black">{{ page.title }}</h1>
+    </div>
+</div>
 {% schema %}
     {
         "name": "About hero",
-        "settings": []
+        "tag": "section",
+        "class": "about-hero",
+        "settings": [{
+            "type": "text",
+            "id": "title",
+            "label": "About Hero"
+            }
+        ]
     }
 {% endschema %}
