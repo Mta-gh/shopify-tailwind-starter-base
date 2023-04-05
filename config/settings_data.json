@@ -144,7 +144,16 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/background_image_of_next_drop.png",
               "image_height": 39,
-              "image_background_position": "center"
+              "image_background_position": "center",
+              "image_gradient_darkness": 30,
+              "hero_heading": "Knock knock neo",
+              "heading_font_size": "text-3xl md:text-5xl",
+              "heading_color": "#ffffff",
+              "sub_heading": "The matrix has you",
+              "sub_heading_color": "#ffffff",
+              "button_url": "",
+              "button_text": "Learn more",
+              "button_background_color": "bg-white hover:bg-gray-200 text-black"
             }
           }
         },
