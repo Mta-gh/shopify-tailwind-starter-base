@@ -1,35 +1,43 @@
 <div class="twcss-h-[44rem] twcss-max-w-full">
+    {%- for block in section.blocks -%}
     {% comment %} Title Container {% endcomment %}
     <div class="twcss-max-w-[60%]">
-        <h1 class="twcss-text-6xl twcss-font-black">{{ block.settings.heading  }}</h1>
+        <h1 class="twcss-text-6xl twcss-font-black">{{ block.settings.hero-title }}</h1>
     </div>
+    {%- if section.settings.image != blank -%}
+        <div id="hero-header" class="relative z-0" style="height: 30vh; background-size: cover; background-position: center ;background-image: url('{{ block.settings.image | img_url: '1800x', crop: "center" }}');">
+        </div>
+    {% endif %}
+    {% endfor %}
+    
 </div>
 {% schema %}
     {
         "name": "About hero",
         "tag": "section",
         "class": "about-hero",
-        "settings": [{
-            "type": "image_picker",
-            "id": "hero-image",
-            "label": "sections.about-hero.settings.image.label"
-            }
-        ],
-        "blocks": [
-            {
-                "name": "Hero title",
-                "type": "heading",
-                "limit": 1,
-                "settings": [
-                    {
-                        "type": "inline_richtext",
-                        "id": "hero-title",
-                        "default": "Hero Banner",
-                        "label": "Hero Title"
-                    }
-                ]
-            }
-        ]
+        
+        "blocks": [{
+            "type": "image",
+            "name": "Image",
+            "settings": [{
+                  "type": "header",
+                  "content": "Hero Image"
+               },
+               {
+                  "type": "image_picker",
+                  "id": "image",
+                  "label": "Image"
+               }
+            ]
+         }],
+         "presets": [{
+            "name": "Hero Image",
+            "category": "Image",
+            "blocks": [{
+               "type": "image"
+            }]
+         }]
         
     }
 {% endschema %}
